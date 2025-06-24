@@ -1,0 +1,443 @@
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../css/gif.gif') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: #fff;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 15px #ff69b4;
+}
+
+.hero-content h1 span {
+    color: #ff69b4;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* Accessible button */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff69b4;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #ff1493;
+    transform: translateY(-3px);
+    outline: none;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.6);
+}
+
+
+
+
+/* Nav*/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.95);
+    padding: 15px 30px;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-content a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-content a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    /* GIF background */
+    background: url('../css/gif.gif') no-repeat center center fixed;
+    background-size: cover;
+
+    /* Fallback gradient overlay */
+    background-blend-mode: overlay;
+    background-color: rgba(15, 15, 15, 0.7);
+    /* If background-blend-mode doesn't work well, use overlay pseudo-element */
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional dark overlay for better contrast */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 15, 15, 0.6);
+    z-index: 0;
+}
+
+/* Ensure your main container is above overlay */
+.auth-box, .dashboard {
+    position: relative;
+    z-index: 2;
+}
+
+/* Message */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.message.error {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Auth container */
+.auth-box {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.5); /* pink glow */
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #ff69b4; /* hot pink */
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2c2c2c;
+    color: white;
+    font-size: 16px;
+}
+
+.auth-box input::placeholder {
+    color: #bbb;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    background: #ff69b4; /* hot pink */
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-box button:hover {
+    background: #ff1493; /* deep pink */
+}
+
+.auth-box p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-box a {
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+/* Dashboard */
+.dashboard {
+    max-width: 700px;
+    margin: auto;
+    padding: 60px 30px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* pink glow */
+}
+
+.dashboard h1 {
+    font-size: 32px;
+    color: #ff69b4; /* hot pink */
+    margin-bottom: 15px;
+}
+
+.dashboard p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.dashboard-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dash-btn {
+    background: #ff69b4; /* hot pink */
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.dash-btn:hover {
+    background: #ff1493; /* deep pink */
+}
+
+.dash-btn.logout {
+    background: #ff4d94; /* slightly different pink for logout */
+}
+
+.dash-btn.logout:hover {
+    background: #e60073; /* darker pink */
+}
+.dashboard .user-info {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #bbb;
+}
+/* Lessons */
+.lessons-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: white;
+}
+
+.lessons-container h1 {
+    font-size: 34px;
+    color: #ff69b4;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.lessons-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.lesson-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.lesson-card {
+    background: #2c2c2c;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lesson-card h3 {
+    font-size: 20px;
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.lesson-card p {
+    font-size: 15px;
+    color: #ddd;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.lesson-card .btn {
+    background: #ff69b4;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.lesson-card .btn:hover {
+    background: #ff1493;
+}
+
+/* Lesson */
+.lesson-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    color: white;
+}
+
+.lesson-detail h1 {
+    font-size: 28px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lesson-detail .video-container {
+    margin-bottom: 20px;
+}
+
+.lesson-detail p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.lesson-detail .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff69b4;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.lesson-detail .btn:hover {
+    background: #ff1493;
+}
+
+/* Courses */
+.courses-container {
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.course-card {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.course-card h3 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.course-card .btn {
+    background: #ff69b4;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.course-card .btn:hover {
+    background: #ff1493;
+}
+
+/* video wr*/
+.video-thumb {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255,105,180,0.3);
+}
+.video-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
